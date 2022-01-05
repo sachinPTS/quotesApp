@@ -1,7 +1,3 @@
 <div class="quoteContainer">
-<app-quote></app-quote>
-<app-quote></app-quote>
-<app-quote></app-quote>
-<app-quote></app-quote>
-<app-quote></app-quote>
+<app-quote *ngFor="let item of quoteArr" [quote]="item"></app-quote>
 </div>
