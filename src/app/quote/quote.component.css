@@ -1,3 +1,7 @@
 .card{
     float: left;
+    margin: 10px 10px;
+    
+    background-repeat: round;
+    font-weight: bold;
 }

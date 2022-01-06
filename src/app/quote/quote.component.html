@@ -1,4 +1,5 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" [ngStyle]="{'background-image': 'url(' + quote.imageUrl + ')'}">
+    
     <div class="card-body">
       
       <p class="card-text">{{quote.quote}}</p>
@@ -6,3 +7,5 @@
       
     </div>
   </div>
+  
+  
