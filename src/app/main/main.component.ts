@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  currentQuote;
+  isShowPopup=false;
 quoteArr=[  
   {  
     "shareCount":15011,
@@ -306,6 +308,14 @@ quoteArr=[
   constructor() { }
 
   ngOnInit(): void {
+  }
+  showPopup(obj){
+    this.isShowPopup=true;
+    this.currentQuote=obj;
+console.log(obj)
+  }
+  closePopup(){
+    this.isShowPopup=false;
   }
 
 }

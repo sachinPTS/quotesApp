@@ -1,3 +1,7 @@
 .quoteContainer{
     display: inline-block;
 }
+.modal{
+    display: block;
+    opacity: 1;
+}

@@ -1,3 +1,32 @@
 <div class="quoteContainer">
-<app-quote *ngFor="let item of quoteArr" [quote]="item"></app-quote>
+<app-quote *ngFor="let item of quoteArr" [quote]="item" (sendDataEvent)="showPopup($event)"></app-quote>
 </div>
+
+
+
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" *ngIf="isShowPopup" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{currentQuote?.author.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closePopup()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            {{currentQuote?.quote}}
+          </div>
+          <div>
+            Likes:{{currentQuote?.likeCount}} &nbsp;&nbsp; Share: {{currentQuote?.shareCount}}
+          </div>
+          <div>Category: <span *ngFor="let item of currentQuote.topics">{{item}}, </span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

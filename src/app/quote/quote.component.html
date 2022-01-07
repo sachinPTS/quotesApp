@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;" [ngStyle]="{'background-image': 'url(' + quote.imageUrl + ')'}">
+<div class="card" style="width: 18rem;" (click)="sendData()" [ngStyle]="{'background-image': 'url(' + quote.imageUrl + ')'}">
     
     <div class="card-body">
       

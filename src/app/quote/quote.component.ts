@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-quote',
@@ -7,10 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
 @Input() quote;
+@Output() sendDataEvent =new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.quote)
+  }
+  sendData(){
+  
+    this.sendDataEvent.emit(this.quote);
   }
 
 }
